@@ -1,4 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
+
 import reducers from '../reducers'
 
 let reduxStore = null
@@ -9,6 +11,14 @@ if (process.browser && window.__REDUX_DEVTOOLS_EXTENSION__) {
   devtools = window.__REDUX_DEVTOOLS_EXTENSION__()
 }
 
+const devMiddlewares = [require('redux-logger').default]
+
+const prodMiddlewares = [thunk]
+
+const middlewares = process.env.NODE_ENV === 'production'
+  ? [ ...prodMiddlewares ]
+  : [ ...devMiddlewares, ...prodMiddlewares ]
+
 function create (apollo, initialState = {}) {
   return createStore(
     combineReducers({ // Setup reducers
@@ -17,7 +27,10 @@ function create (apollo, initialState = {}) {
     }),
     initialState, // Hydrate the store with server-side data
     compose(
-      applyMiddleware(apollo.middleware()), // Add additional middleware here
+      applyMiddleware(
+        apollo.middleware(),
+        ...middlewares
+      ), // Add additional middleware here
       devtools
     )
   )
