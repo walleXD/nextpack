@@ -1,5 +1,6 @@
-# Nuxtpack
-### Opinionated fullstack react boilerplate
+Nuxtpack
+=========
+> Opinionated fullstack react boilerplate
 
 #### Built with
 1. [nuxt.js](https://github.com/zeit/next.js/)
@@ -20,3 +21,11 @@ For production:
 yarn build
 yarn start
 ```
+
+---
+
+<!-- ##### WIP -->
+<!-- - [ ] TODO: Add Mongodb support using mongoose -->
+<!-- - [ ] TODO: Integrate mongodb with graphql server -->
+<!-- - [ ] TODO: Refactor graphql client network to use our endpoint -->
+<!-- - [ ] TODO: Refactor example page to use data from our endpoint -->
