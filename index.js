@@ -6,11 +6,11 @@ import conf from './client/next.config'
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev, dir: './client', conf })
+const server = express()
 const handle = app.getRequestHandler()
 
 const start = async () => {
   await app.prepare()
-  const server = express()
 
   server
     .use(graphqlRouter)

@@ -1,5 +1,5 @@
-Nuxtpack
-=========
+⚡🎒 Nextpack
+==============
 > Opinionated fullstack react boilerplate
 
 #### Built with
@@ -24,8 +24,10 @@ yarn start
 
 ---
 
-<!-- ##### WIP -->
+##### WIP
+
 <!-- - [ ] TODO: Add Mongodb support using mongoose -->
 <!-- - [ ] TODO: Integrate mongodb with graphql server -->
 <!-- - [ ] TODO: Refactor graphql client network to use our endpoint -->
 <!-- - [ ] TODO: Refactor example page to use data from our endpoint -->
+ - [X] TODO: Add Ui component library - Material UI

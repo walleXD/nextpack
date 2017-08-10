@@ -1,6 +1,8 @@
 import React from 'react'
 import { node } from 'prop-types'
 
+import withStyle from '../containers/StyleContainer'
+
 const DefaultLayout = ({ children }) =>
   <div>
     {children}
@@ -10,4 +12,4 @@ DefaultLayout.propTypes = {
   children: node
 }
 
-export default DefaultLayout
+export default withStyle(DefaultLayout)
